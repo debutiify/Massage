@@ -1,1 +1,207 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Wellness Training Guide</title>
 
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif;}
+
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:#fff;
+overflow-x:hidden;
+transition:0.4s ease;
+}
+
+/* Main Content */
+.main-content{
+padding:80px 10%;
+text-align:center;
+transition:0.5s ease;
+}
+
+.main-content h1{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.main-content p{
+font-size:18px;
+margin-bottom:30px;
+color:#e0e0e0;
+}
+
+.btn{
+background:#00c6a9;
+padding:14px 30px;
+border:none;
+border-radius:8px;
+color:#fff;
+font-size:16px;
+cursor:pointer;
+text-decoration:none;
+display:inline-block;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#00a98f;
+}
+
+/* Blur + Zoom Effect */
+.blur-effect{
+filter:blur(8px);
+transform:scale(1.05);
+pointer-events:none;
+user-select:none;
+}
+
+/* Premium Glass Popup */
+.age-overlay{
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(18px);
+z-index:9999;
+opacity:0;
+visibility:hidden;
+transition:0.4s ease;
+}
+
+.age-overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+.age-box{
+background:rgba(255,255,255,0.15);
+border:1px solid rgba(255,255,255,0.25);
+backdrop-filter:blur(30px);
+padding:45px;
+border-radius:25px;
+width:90%;
+max-width:450px;
+text-align:center;
+color:#fff;
+box-shadow:0 30px 70px rgba(0,0,0,0.6);
+animation:popupFade 0.4s ease;
+}
+
+@keyframes popupFade{
+from{opacity:0;transform:scale(0.85);}
+to{opacity:1;transform:scale(1);}
+}
+
+.age-box h2{
+margin-bottom:18px;
+font-size:24px;
+}
+
+.age-box p{
+font-size:15px;
+line-height:1.6;
+margin-bottom:30px;
+color:#f1f1f1;
+}
+
+.age-buttons button{
+padding:13px 30px;
+margin:8px;
+border-radius:40px;
+border:none;
+cursor:pointer;
+font-size:14px;
+transition:0.3s;
+}
+
+.btn-yes{
+background:#00c6a9;
+color:white;
+}
+
+.btn-no{
+background:rgba(255,255,255,0.2);
+color:white;
+border:1px solid rgba(255,255,255,0.4);
+}
+
+.btn-yes:hover{
+background:#00a98f;
+}
+
+.btn-no:hover{
+background:rgba(255,255,255,0.35);
+}
+
+/* Mobile */
+@media(max-width:768px){
+.main-content{
+padding:60px 6%;
+}
+.main-content h1{
+font-size:26px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div id="content" class="main-content">
+<h1>Professional Wellness Service Training Guide (Hindi)</h1>
+<p>Step-by-step professional training guide to start and manage wellness services responsibly and ethically.</p>
+<a href="#" class="btn">Get Instant Access – ₹199</a>
+</div>
+
+<!-- Premium Hindi Age Popup -->
+<div class="age-overlay" id="agePopup">
+<div class="age-box">
+<h2>आयु पुष्टि (Age Confirmation)</h2>
+<p>
+यह वेबसाइट 18 वर्ष या उससे अधिक आयु के उपयोगकर्ताओं के लिए है।  
+कृपया आगे बढ़ने से पहले अपनी आयु की पुष्टि करें।
+</p>
+
+<div class="age-buttons">
+<button class="btn-yes" onclick="verifyAge()">हाँ, मेरी आयु 18 वर्ष या अधिक है</button>
+<button class="btn-no" onclick="exitSite()">मैं 18 वर्ष से कम हूँ</button>
+</div>
+</div>
+</div>
+
+<script>
+const popup = document.getElementById("agePopup");
+const content = document.getElementById("content");
+
+window.onload = function(){
+
+if(localStorage.getItem("ageVerified")==="true"){
+popup.style.display="none";
+} else {
+
+setTimeout(()=>{
+popup.classList.add("active");
+content.classList.add("blur-effect");
+},3000);
+
+}
+}
+
+function verifyAge(){
+localStorage.setItem("ageVerified","true");
+popup.classList.remove("active");
+content.classList.remove("blur-effect");
+}
+
+function exitSite(){
+window.location.href="https://google.com";
+}
+</script>
+
+</body>
+</html>
