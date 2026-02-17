@@ -241,9 +241,13 @@ text-align:center;
 <div class="age-overlay" id="agePopup">
 <div class="age-box">
 <h3>आयु पुष्टि (Age Confirmation)</h3>
-<p>यह वेबसाइट 18 वर्ष या उससे अधिक आयु के उपयोगकर्ताओं के लिए है। कृपया आगे बढ़ने से पहले अपनी आयु की पुष्टि करें।</p>
-<button class="btn-yes" onclick="verifyAge()">हाँ, मैं 18+ हूँ</button>
-<button class="btn-no" onclick="exitSite()">मैं 18 से कम हूँ</button>
+<p>
+यह वेबसाइट 18 वर्ष या उससे अधिक आयु के उपयोगकर्ताओं के लिए है। 
+कृपया आगे बढ़ने से पहले अपनी आयु की पुष्टि करें।
+</p>
+
+<button class="btn-yes" onclick="redirectYes()">हाँ, मैं 18+ हूँ</button>
+<button class="btn-no" onclick="redirectNo()">मैं 18 से कम हूँ</button>
 </div>
 </div>
 
@@ -261,6 +265,17 @@ function exitSite(){
 window.location.href="https://superprofile.bio/vp/8FrfuLN2";
 }
 </script>
+
+  <script>
+function redirectYes(){
+window.location.href = "https://your-18plus-link.com";
+}
+
+function redirectNo(){
+window.location.href = "https://your-under18-link.com";
+}
+</script>
+
 
 </body>
 </html>
