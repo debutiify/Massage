@@ -9,35 +9,29 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif;}
 
 body{
-background:linear-gradient(135deg,#1d4350,#a43931);
+background:linear-gradient(135deg,#1e3c72,#2a5298);
 min-height:100vh;
 color:#fff;
-overflow-x:hidden;
 }
 
-/* GLASS COMMON STYLE */
+/* GLASS STYLE */
 .glass{
 background:rgba(255,255,255,0.12);
 border:1px solid rgba(255,255,255,0.25);
 backdrop-filter:blur(20px);
--webkit-backdrop-filter:blur(20px);
 border-radius:20px;
 box-shadow:0 20px 50px rgba(0,0,0,0.4);
 }
 
 /* HEADER */
 header{
-margin:30px auto;
 width:90%;
 max-width:1200px;
+margin:30px auto;
 padding:15px 30px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-}
-
-header h2{
-font-weight:600;
 }
 
 /* HERO */
@@ -45,11 +39,11 @@ font-weight:600;
 width:90%;
 max-width:1200px;
 margin:60px auto;
+padding:60px;
 display:flex;
 flex-wrap:wrap;
 align-items:center;
-gap:50px;
-padding:50px;
+gap:40px;
 }
 
 .hero-text{
@@ -81,9 +75,7 @@ display:inline-block;
 transition:0.3s;
 }
 
-.btn:hover{
-background:#00a98f;
-}
+.btn:hover{background:#00a98f;}
 
 .hero-img{
 flex:1;
@@ -103,11 +95,6 @@ width:90%;
 max-width:1200px;
 margin:80px auto;
 padding:60px;
-}
-
-.section h2{
-text-align:center;
-margin-bottom:40px;
 }
 
 .grid{
@@ -137,7 +124,7 @@ top:0;left:0;width:100%;height:100%;
 display:flex;
 justify-content:center;
 align-items:center;
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.75);
 backdrop-filter:blur(15px);
 z-index:9999;
 }
@@ -152,13 +139,6 @@ width:90%;
 max-width:450px;
 text-align:center;
 color:#fff;
-box-shadow:0 30px 70px rgba(0,0,0,0.6);
-animation:fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:scale(0.85);}
-to{opacity:1;transform:scale(1);}
 }
 
 .age-box h3{
@@ -213,7 +193,7 @@ text-align:center;
 <section class="hero glass">
 <div class="hero-text">
 <h1>Professional Wellness Service Training Guide (Hindi)</h1>
-<p>Learn how to start and manage wellness services responsibly with proper hygiene standards, client communication and ethical practices.</p>
+<p>Learn how to start and manage wellness services responsibly with professional standards, hygiene practices and ethical communication.</p>
 <a href="#" class="btn">Get Instant Access – ₹199</a>
 </div>
 
@@ -228,7 +208,7 @@ text-align:center;
 <div class="card glass"><h4>Service Setup</h4><p>Professional planning structure.</p></div>
 <div class="card glass"><h4>Client Communication</h4><p>Responsible interaction methods.</p></div>
 <div class="card glass"><h4>Hygiene Standards</h4><p>Safe and clean practices.</p></div>
-<div class="card glass"><h4>Growth Strategy</h4><p>Legal and compliant promotion methods.</p></div>
+<div class="card glass"><h4>Growth Strategy</h4><p>Legal promotion basics.</p></div>
 </div>
 </section>
 
@@ -238,7 +218,7 @@ text-align:center;
 </footer>
 
 <!-- AGE POPUP -->
-<div class="age-overlay" id="agePopup">
+<div class="age-overlay">
 <div class="age-box">
 <h3>आयु पुष्टि (Age Confirmation)</h3>
 <p>
@@ -246,36 +226,16 @@ text-align:center;
 कृपया आगे बढ़ने से पहले अपनी आयु की पुष्टि करें।
 </p>
 
-<button class="btn-yes" onclick="redirectYes()">हाँ, मैं 18+ हूँ</button>
-<button class="btn-no" onclick="redirectNo()">मैं 18 से कम हूँ</button>
+<button class="btn-yes" onclick="window.location.href='https://your-18plus-link.com'">
+हाँ, मैं 18+ हूँ
+</button>
+
+<button class="btn-no" onclick="window.location.href='https://your-under18-link.com'">
+मैं 18 से कम हूँ
+</button>
+
 </div>
 </div>
-
-<script>
-if(localStorage.getItem("ageVerified")==="true"){
-document.getElementById("agePopup").style.display="none";
-}
-
-function verifyAge(){
-localStorage.setItem("ageVerified","true");
-document.getElementById("agePopup").style.display="none";
-}
-
-function exitSite(){
-window.location.href="https://superprofile.bio/vp/8FrfuLN2";
-}
-</script>
-
-  <script>
-function redirectYes(){
-window.location.href = "https://superprofile.bio/vp/8FrfuLN2";
-}
-
-function redirectNo(){
-window.location.href = "https://superprofile.bio/vp/8FrfuLN2";
-}
-</script>
-
 
 </body>
 </html>
